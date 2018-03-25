@@ -41,7 +41,7 @@ def getTreeDepth(myTree):
     return maxDepth
 
 def retrieveTree(i):
-    listOfTrees =[{'no surfacing': {0: 'no', 1: {'flippers': {0: 'no', 1: 'yes'}}}},
+    listOfTrees =[{'no surfacing': {0: 'no', 1: {'flippers': {0: 'no', 1: 'yes'}},3:'maybe'}},
                   {'no surfacing': {0: 'no', 1: {'flippers': {0: {'head': {0: 'no', 1: 'yes'}}, 1: 'no'}}}}
                   ]
     return listOfTrees[i]
@@ -72,8 +72,8 @@ def plotTree(myTree,parentPt,nodeTxt):
 def createPlot(inTree):
     fig = plt.figure(1,facecolor = 'white')
     fig.clf()
-    axprops = dict(xtixks=[],yticks=[])
-    createPlot.ax1 = plt.subplot(111,frameon=False,**axprops)
+    axprops = dict(xticks=[],yticks=[])
+    createPlot.ax1 = plt.subplot(111, frameon=False, **axprops)
     plotTree.totalW = float(getNumLeafs(inTree))
     plotTree.totalD = float(getTreeDepth(inTree))
     plotTree.xOff = -0.5/plotTree.totalW
